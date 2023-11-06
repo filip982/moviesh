@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MovieshApp: App {
+    
+    let environment = AppEnvironment.bootstrap()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieListView(viewModel: MovieListView.ViewModel(container: environment.container))
         }
     }
 }
